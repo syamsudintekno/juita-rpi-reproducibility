@@ -1,0 +1,101 @@
+# Data institusional dan seluruh turunannya: privat secara default.
+# Dokumentasi schema boleh dilacak; jangan taruh data sensitif di README.
+/data/**
+!/data/README.md
+/private/
+/sensitive/
+/local_data/
+/raw/
+/processed/
+/roster/
+/mappings/
+/results/
+/outputs/
+/artifacts/
+/logs/
+/notebooks/
+
+# Nama berkas EDOM/identitas di lokasi mana pun (case-insensitive).
+*[eE][dD][oO][mM]*
+*[rR][oO][sS][tT][eE][rR]*
+*[nN][iI][pP]*
+*[nN][iI][mM]*
+*[iI][dD][eE][nN][tT][iI][tT][yY]*
+*[kK][oO][dD][eE]-[nN][aA][mM][aA]*
+*[kK][oO][dD][eE]_[nN][aA][mM][aA]*
+
+# Format data/export, notebook, database, model, dan arsip.
+# Konservatif: output publik harus ditinjau sebelum diberi pengecualian.
+*.[cC][sS][vV]
+*.[tT][sS][vV]
+*.[xX][lL][sS]
+*.[xX][lL][sS][xX]
+*.[xX][lL][sS][mM]
+*.[xX][lL][sS][bB]
+*.[oO][dD][sS]
+*.parquet
+*.feather
+*.arrow
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.rds
+*.RData
+*.dta
+*.sav
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.ipynb
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+*.bak
+*.log
+
+# Kredensial dan konfigurasi lokal.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+/.aws/
+
+# Environment, cache, dan berkas sementara.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.cache/
+build/
+dist/
+*.egg-info/
+~$*
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Pengecualian terukur hanya untuk contoh sintetis yang ditinjau.
+# Nama EDOM/identitas tetap diblokir oleh pola berikut.
+!/examples/synthetic/*.csv
+!/examples/synthetic/*.tsv
+/examples/synthetic/*[eE][dD][oO][mM]*
+/examples/synthetic/*[rR][oO][sS][tT][eE][rR]*
+/examples/synthetic/*[nN][iI][pP]*
+/examples/synthetic/*[nN][iI][mM]*
+/examples/synthetic/*[iI][dD][eE][nN][tT][iI][tT][yY]*
+/examples/synthetic/*[kK][oO][dD][eE]-[nN][aA][mM][aA]*
+/examples/synthetic/*[kK][oO][dD][eE]_[nN][aA][mM][aA]*
