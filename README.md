@@ -4,7 +4,7 @@ This repository supports the revision of “Restoring Distributional Properties 
 
 ## Current status
 
-The repository contains project instructions, a privacy policy enforced through `.gitignore`, a proposed input contract, a preprocessing protocol, and an internal revision tracker. No institutional source file has been inspected in this checkout. No empirical analysis, Python pipeline, dependency lock, or CI run is available yet. Counts from the earlier conversation are provisional and must be recomputed.
+The repository contains project instructions, a privacy policy enforced through `.gitignore`, a proposed input contract, a preprocessing protocol, and an internal revision tracker. An earlier Drive CSV, notebook, and manuscript candidate have been inspected read-only through connector text; a private audit is retained locally. Raw-byte provenance and the final cohort remain unverified. No empirical analysis, Python pipeline, dependency lock, or CI run is available yet. Counts from the earlier conversation are provisional and must be recomputed.
 
 ## Data and publication boundaries
 

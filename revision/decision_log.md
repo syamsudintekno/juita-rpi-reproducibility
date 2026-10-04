@@ -20,3 +20,11 @@ Documentation prepared: repository overview, proposed input contract, preprocess
 - Numerical tolerances, percentile definition, and exact quadrant axis/label convention before implementation.
 
 Next: inspect supplied sources read-only, establish private provenance and reconciliation, then implement and verify a Python pipeline using synthetic inputs before an empirical run. Do not mark reviewer items complete until outputs and final manuscript locations exist.
+
+## 2026-10-04 — Read-only review of previous work
+
+The author supplied the earlier Drive workspace. A source CSV, prior notebook, manuscript candidate, template, and multiple output generations were located. A private source inventory and audit were recorded under ignored `private/`; no original source was modified or added to Git.
+
+Connector text was inspected with JavaScript, not the new Python pipeline. It supports the earlier concern about an invalid item and generic records, but identity reconciliation, raw-byte provenance, and the final cohort remain unresolved. The prior notebook uses median imputation and source totals; these must be replaced or explicitly reconciled against the revision protocol. Its composite scaling, aggregate reliability interpretation, ceiling/halo claims, and quadrant labels also need correction. Existing statistics are archival, not newly validated results.
+
+The candidate manuscript has not yet been confirmed as the submitted version. The instrument, identity roster, editor letter, and original reviewer comments remain outstanding. Next: establish a verified source snapshot, then implement preprocessing and scoring with synthetic tests before recomputing empirical results.
