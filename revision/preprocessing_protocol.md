@@ -29,3 +29,13 @@ Upper-range concentration, observed ceiling behavior, and latent information los
 After cohort freeze, implement Gaussian-copula sensitivity scenarios with empirical dimension marginals, latent correlations 0.30, 0.50, 0.70, and 0.98, initially 200 repetitions and seed 20261004. Document the generator and sampling method, report achieved Pearson correlations, and compare matched-weight ranking agreement and position changes. New row combinations are synthetic, but empirical-marginal simulation outputs still require institutional disclosure review. Between-repetition intervals are not population confidence intervals.
 
 Test invalid parsing, whole-record exclusions, aggregation, dimension mapping, weights, ties, rank direction, p bounds, and the dependence of RPI standard deviation on covariance. Record and explain differences from the conversation audit without forcing numerical agreement. No test or empirical result is claimed by this protocol.
+
+## Source-based non-individual classification scenario
+
+The author recalls manually excluding teams and generic supervision roles from the earlier CSV, but no historical script or exclusion log survives. Treat that statement as retrospective context. The current scenario is derived independently from the original workbook labels using `configs/cohort.toml`; do not claim exact reproduction of the manual process.
+
+Classify labels after collapsing whitespace and uppercasing. Exclude labels beginning with the separate word TIM, the explicitly listed generic field/school/thesis supervision labels, and DOSEN DPL. Do not exclude a personally named lecturer merely because they supervise students. Label normalization is used only for classification; retain original names and keep identity reconciliation separate.
+
+Use valid item values from the authoritative workbooks. The prior invalid P4 has a verified source counterpart; preserve it rather than imputing or excluding its record. Recompute totals from all 20 valid items. Keep per-record source provenance and exclusion reasons privately, and reconcile input = retained + excluded without double-counting.
+
+This is a provisional name-group scenario. No target N or record count is encoded. The prior CSV contains naming differences whose lineage remains incompletely documented; working from source strings avoids silently carrying those alterations forward. Identity verification, source/version checks, and statistical recomputation are still required before final manuscript claims.

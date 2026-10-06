@@ -1,0 +1,24 @@
+# Source-based inclusion scenario; this is not a frozen final cohort.
+schema_version = 1
+status = "provisional"
+analysis_unit = "individual_lecturer"
+entity_key = "original_source_name_string"
+identity_verification = "not_roster_verified"
+record_weighting = "equal"
+invalid_item_policy = "verified_source_correction_or_whole_record_exclusion"
+recompute_total_from_items = true
+
+[exclusions]
+# Collapse whitespace and compare case-insensitively for LABEL CLASSIFICATION ONLY.
+# Preserve original identity strings; do not merge names by this normalization.
+label_normalization = "collapse_whitespace_uppercase"
+team_regex = '^TIM(?:\s|$)'
+generic_supervisor_labels = [
+  "PEMBIMBING LAPANGAN KKN",
+  "PEMBIMBING LAPANGAN SYA",
+  "PEMBIMBING LAPANGAN USH",
+  "PEMBIMBING SKRIPSI",
+]
+other_generic_labels = ["DOSEN DPL"]
+# Individual lecturers who supervise students remain eligible when named individually.
+# No target record count or target N is prescribed.

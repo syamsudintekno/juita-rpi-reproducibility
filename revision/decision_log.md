@@ -36,3 +36,9 @@ The author supplied five original LPM workbooks and the question document. Read-
 The invalid item in the earlier CSV has a numeric authoritative counterpart in a uniquely matched LPM source row. A provenance-backed correction in a derivative can replace the earlier provisional exclusion scenario; originals remain unchanged. Source and prior CSV coverage differ, and some lecturer-name strings differ despite matching program and item vectors. Those lineage candidates require review and do not verify identity. The exclusion history and final cohort remain unresolved. Detailed counts, source paths, identities, source hashes, and correction evidence are kept in ignored private audit files.
 
 Next: reconcile prior cohort selection and naming changes, document the verified correction, then implement the pipeline and substantive synthetic tests. Do not force the provisional cohort size or reuse archival statistical results.
+
+## 2026-10-06 — Retrospective exclusion context and explicit cohort rules
+
+The author recalls removing collective lecturer and generic supervisor records manually; no historical script/log is available. Inspection of the omitted labels supports a source-based exclusion scenario using an anchored team-label rule and explicit generic-role labels. The provisional rules are stored in configs/cohort.toml, with no hardcoded target N. The private run reconciles retained and excluded records and retains the authoritative valid item counterpart.
+
+Only generic roles are excluded; named individual supervisors remain eligible. Original source name strings are preserved, with normalization used only to classify labels. The old CSV's naming alterations are not silently copied into the source-based scenario. Counts and identity-bearing logs remain private, and the final cohort has not been frozen. This independently documented scenario must not be described as an exact reconstruction of undocumented historical deletions.
