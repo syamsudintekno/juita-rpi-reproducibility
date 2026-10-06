@@ -35,3 +35,9 @@ Without verified respondent counts, average complete program records with equal 
 Keep the source manifest, header mapping, variable dictionary, identity reconciliation, exclusion and correction logs, cleaned records, and run outputs locally. A manifest records source hash/version, configuration, dependency versions, code commit, timestamp with timezone, stage counts, and output hashes. Private paths and identity-bearing logs must not appear in public artifacts.
 
 Before analysis, reconcile input records against retained and excluded records; document overlapping exclusion reasons without double-counting. Report both record counts and entity counts and explain identity uncertainty.
+
+## Source inspection update on 2026-10-06
+
+The supplied LPM workbooks and question document have now been inspected read-only. Their item-table headers are `No.`, `Nama Dosen`, `Program Studi`, `Pertanyaan 1` through `Pertanyaan 20`, and `Rata-Rata`. Institutional ID is absent from these item tables, despite its presence in the earlier CSV; its origin remains to be traced. Each workbook contains several summary tables, including a second dimension table below the item table. Detect headers explicitly rather than reading all numbered rows as item records.
+
+The question document supports the 6/5/5/4 competency grouping and lists categories 1–5. Its example frequency counts do not provide respondent counts for the full dataset. The source records remain aggregate item means. The invalid item in the earlier CSV has a verified source value; corrections must remain in a derivative with the original value and cell provenance recorded privately. Prior cohort selection and altered name strings still require reconciliation before freezing the data.
