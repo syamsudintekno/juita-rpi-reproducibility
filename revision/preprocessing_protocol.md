@@ -1,6 +1,6 @@
 # Preprocessing and analysis protocol
 
-Status: planned, not executed. The institutional source and instrument have not been inspected in this checkout.
+Status as of 2026-10-06: source workbooks and instrument inspected; core pipeline implemented, eleven local synthetic tests passed, and one provisional source-based empirical run completed. Identity verification, cohort freeze, sensitivity simulations, and final manuscript verification remain outstanding.
 
 ## Source and cohort
 
@@ -39,3 +39,13 @@ Classify labels after collapsing whitespace and uppercasing. Exclude labels begi
 Use valid item values from the authoritative workbooks. The prior invalid P4 has a verified source counterpart; preserve it rather than imputing or excluding its record. Recompute totals from all 20 valid items. Keep per-record source provenance and exclusion reasons privately, and reconcile input = retained + excluded without double-counting.
 
 This is a provisional name-group scenario. No target N or record count is encoded. The prior CSV contains naming differences whose lineage remains incompletely documented; working from source strings avoids silently carrying those alterations forward. Identity verification, source/version checks, and statistical recomputation are still required before final manuscript claims.
+
+## Implemented numerical conventions
+
+`configs/analysis.toml` specifies ascending average dimension ranks, Blom offset 0.375, display location 50 and scale 10, finite nonnegative weights with sum tolerance 1e-12, and a covariance identity check with absolute tolerance 1e-10. Rank ties use exact unrounded values; tolerances do not merge nearby values. Quantiles use NumPy's linear method, sample SD uses ddof=1, skewness is bias-corrected, and excess kurtosis uses Fisher's convention with bias correction.
+
+Descriptive percentile positions are `100*(ascending midrank - 0.5)/N`, including tied midranks. They are cohort-specific empirical plotting positions and are distinct from Blom plotting probabilities. Quadrants compare matched-weight raw scores on x with RPI on y, using median equality as high: Q1 high/high, Q2 high/low, Q3 low/high, and Q4 low/low. Empty quadrants remain empty and must not be filled with invented examples.
+
+Alpha is reported separately for complete lecturer–program aggregate records and for lecturer name-group item means. Neither is individual student-response reliability. Shapiro–Wilk is not reported for constant series or N outside 3–5000. Constant-series correlations and undefined alpha return null rather than zero. A numerical p-value reported as zero by SciPy denotes underflow/finite precision, not an exact probability of zero.
+
+The initial provisional run and identity-bearing outputs are private. No public institutional result or completed reviewer response is implied by this implementation.

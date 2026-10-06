@@ -42,3 +42,9 @@ Next: reconcile prior cohort selection and naming changes, document the verified
 The author recalls removing collective lecturer and generic supervisor records manually; no historical script/log is available. Inspection of the omitted labels supports a source-based exclusion scenario using an anchored team-label rule and explicit generic-role labels. The provisional rules are stored in configs/cohort.toml, with no hardcoded target N. The private run reconciles retained and excluded records and retains the authoritative valid item counterpart.
 
 Only generic roles are excluded; named individual supervisors remain eligible. Original source name strings are preserved, with normalization used only to classify labels. The old CSV's naming alterations are not silently copied into the source-based scenario. Counts and identity-bearing logs remain private, and the final cohort has not been frozen. This independently documented scenario must not be described as an exact reconstruction of undocumented historical deletions.
+
+## 2026-10-06 — Tested core pipeline and first provisional empirical run
+
+The core source reader, whole-record validation, generic-label exclusions, equal-record aggregation, RPI formulation, matched-weight comparator, diagnostics, and private run provenance are implemented. Exact runtime dependency versions and analysis conventions are committed. Eleven local synthetic tests passed; an initial empirical run completed from the hash-verified original workbooks using committed code with a clean working tree. Detailed outputs, identity mapping, and interpretation are private.
+
+The initial run does not freeze lecturer identity/cohort or establish measurement validity. Simulations, sensitivity comparisons, publication figures, manuscript revisions, and final reviewer responses remain outstanding. Synthetic-only CI is configured; remote CI outcome has not been verified in this session.

@@ -4,7 +4,7 @@ This repository supports the revision of “Restoring Distributional Properties 
 
 ## Current status
 
-The repository contains project instructions, a privacy policy enforced through `.gitignore`, a proposed input contract, a preprocessing protocol, and an internal revision tracker. An earlier Drive CSV, notebook, and manuscript candidate have been inspected read-only through connector text; a private audit is retained locally. Raw-byte provenance and the final cohort remain unverified. No empirical analysis, Python pipeline, dependency lock, or CI run is available yet. Counts from the earlier conversation are provisional and must be recomputed.
+The repository now contains a source-based preprocessing and RPI pipeline, exact dependency pins, analysis/cohort configurations, eleven passing local synthetic tests, and a synthetic-only CI workflow. Original LPM workbooks and the question document were inspected read-only; source byte hashes and the first provisional empirical run are retained privately. Identity verification and the final cohort remain unresolved. Remote CI status has not yet been verified. Earlier chat counts and statistical outputs are archival, not acceptance targets.
 
 ## Data and publication boundaries
 
@@ -21,7 +21,7 @@ Never commit names, institutional identifiers, identity mappings, private downlo
 5. Implement the main pipeline in Python with a locked environment and substantive tests. Record input hashes, configuration, dependency versions, commit, timestamp, reconciliation counts, and output checksums for every run.
 6. Review the resulting evidence before updating the manuscript and [revision tracker](revision/reviewer_matrix.md).
 
-Execution commands will be added when an implemented and tested pipeline exists. CI must use synthetic inputs and require no private EDOM access.
+The commands below run the implemented pipeline. CI uses synthetic inputs and requires no private EDOM access.
 
 ## Working formulation
 
@@ -30,3 +30,22 @@ For each dimension, use ascending midranks and `p = (r - 0.375) / (N + 0.25)`, t
 Compare RPI principally with the raw composite using the same dimension weights: `X = 20 * sum(0.25 * d_k)`. The sum of the 20 item means is an additional comparator with different effective dimension weights. Rankit preserves ties and cannot restore lost information or establish measurement validity.
 
 See [AGENTS.md](AGENTS.md) for the complete methodological and editorial constraints and [the decision log](revision/decision_log.md) for project status.
+
+## Environment and execution
+
+The tested local interpreter is Python 3.12.14. Use Python 3.12 and install the exact runtime package versions from `requirements.lock` in a local virtual environment. In Windows PowerShell:
+
+```powershell
+python -m venv .venv
+& .\.venv\Scripts\python.exe -m pip install -r requirements.lock
+& .\.venv\Scripts\python.exe -m unittest discover -s tests -v
+& .\.venv\Scripts\python.exe -m src.rpi_pipeline --source-manifest private/lpm_manifest.json --output private/runs/unique_run_name
+```
+
+Create the private source manifest from the reviewed original files as a JSON list of objects with `path` and lowercase `sha256` fields. It may contain additional private audit metadata. Every source must match its reviewed hash and contain exactly one item table with the verified headers. The reader stops at the next dimension header and does not count summary rows as item records. Duplicate name–program pairs require review rather than silent deduplication. Use a new output directory for every run.
+
+The pipeline preserves original name strings as provisional grouping keys, excludes only documented collective/generic labels, excludes entire invalid records without imputation, and averages complete records equally within a name group. Source-corrected values are read directly from the authoritative workbook. The pipeline does not edit a CSV or workbook in place.
+
+Outputs include retained records, per-record exclusion reasons, a PRIVATE identity mapping, item/dimension/rank/p/z/composite scores, two raw comparators, RPI, descriptive and tie statistics, aggregate-level alpha at two explicitly named levels, Pearson dimension correlations, ranking agreement, position shifts, percentile positions, quadrants, and Shapiro–Wilk diagnostics. A run manifest records input/config/code/output hashes, dependencies, commit, timestamp, and counts. All institutional outputs are restricted to `private/`; neither anonymous codes nor statistical aggregation automatically authorize public release.
+
+Simulation and publication figures are not yet implemented. A statistical run on provisional name groups does not freeze lecturer identities, establish a ceiling mechanism, or demonstrate measurement validity.
