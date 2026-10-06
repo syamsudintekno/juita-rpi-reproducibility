@@ -1,0 +1,5 @@
+# Exact runtime versions for the tested Python 3.12 environment.
+numpy==2.2.6
+scipy==1.15.3
+openpyxl==3.1.5
+et_xmlfile==2.0.0
